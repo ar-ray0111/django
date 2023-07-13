@@ -21,8 +21,7 @@ def event_form(request):
 
 def api_call(request):
     events = Event.objects.all()
-    event_list = {
-        "events": [
+    event_list =[
             {
                 "event_name": event.event_name,
                 "poster": event.poster,
@@ -31,7 +30,7 @@ def api_call(request):
                 "event_summary": event.event_summary,
             }for event in events
         ] 
-    }
+    
 
     json_data = json.dumps(event_list, indent=4)
     return HttpResponse(json_data, content_type="application/json")
