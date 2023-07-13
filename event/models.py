@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Event(models.Model):
-    event_name = models.CharField(max_length=20)
+    event_name = models.CharField(max_length=30)
     poster = models.URLField()
     registration_link = models.URLField(max_length=100)
     time = models.DateField()
