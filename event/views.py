@@ -20,7 +20,7 @@ def event_form(request):
 
 
 def api_call(request):
-    events = Event.objects.all()
+    events = Event.objects.all().order_by('-time')
     event_list =[
             {
                 "event_name": event.event_name,
